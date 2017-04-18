@@ -1,0 +1,1183 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/lacona/lacona">lacona (v0.39.0)</a>
+</h1>
+<h4>Natural Language Parsing Framework</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lacona">module lacona</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lacona.LaconaError">
+            function <span class="apidocSignatureSpan">lacona.</span>LaconaError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lacona.Parser">
+            function <span class="apidocSignatureSpan">lacona.</span>Parser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lacona.source_manager">
+            function <span class="apidocSignatureSpan">lacona.</span>source_manager
+            <span class="apidocSignatureSpan">(_ref)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lacona.</span>component</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lacona.</span>error</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lacona.</span>parse</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lacona.</span>parser</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lacona.</span>reconcile</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lacona.</span>string_match</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lacona.</span>string_utils</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lacona.LaconaError">module lacona.LaconaError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lacona.LaconaError.LaconaError">
+            function <span class="apidocSignatureSpan">lacona.</span>LaconaError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lacona.Parser">module lacona.Parser</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lacona.Parser.Parser">
+            function <span class="apidocSignatureSpan">lacona.</span>Parser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lacona.component">module lacona.component</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lacona.component.addSource">
+            function <span class="apidocSignatureSpan">lacona.component.</span>addSource
+            <span class="apidocSignatureSpan">(_ref2)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lacona.component.destroyPhrase">
+            function <span class="apidocSignatureSpan">lacona.component.</span>destroyPhrase
+            <span class="apidocSignatureSpan">(_ref7)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lacona.component.getConstructor">
+            function <span class="apidocSignatureSpan">lacona.component.</span>getConstructor
+            <span class="apidocSignatureSpan">(_ref)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lacona.component.getRealProps">
+            function <span class="apidocSignatureSpan">lacona.component.</span>getRealProps
+            <span class="apidocSignatureSpan">(_ref5)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lacona.component.instantiate">
+            function <span class="apidocSignatureSpan">lacona.component.</span>instantiate
+            <span class="apidocSignatureSpan">(_ref6)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lacona.component.removeSource">
+            function <span class="apidocSignatureSpan">lacona.component.</span>removeSource
+            <span class="apidocSignatureSpan">(_ref3)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lacona.error">module lacona.error</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lacona.error.LaconaError">
+            function <span class="apidocSignatureSpan">lacona.error.</span>LaconaError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lacona.parse">module lacona.parse</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lacona.parse.parse">
+            function <span class="apidocSignatureSpan">lacona.</span>parse
+            <span class="apidocSignatureSpan">(_ref)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lacona.parser">module lacona.parser</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lacona.parser.Parser">
+            function <span class="apidocSignatureSpan">lacona.parser.</span>Parser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lacona.parser.createOption">
+            function <span class="apidocSignatureSpan">lacona.parser.</span>createOption
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lacona.reconcile">module lacona.reconcile</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lacona.reconcile.reconcile">
+            function <span class="apidocSignatureSpan">lacona.</span>reconcile
+            <span class="apidocSignatureSpan">(_ref)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lacona.source_manager">module lacona.source_manager</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lacona.source_manager.source_manager">
+            function <span class="apidocSignatureSpan">lacona.</span>source_manager
+            <span class="apidocSignatureSpan">(_ref)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lacona.string_match">module lacona.string_match</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lacona.string_match.match">
+            function <span class="apidocSignatureSpan">lacona.string_match.</span>match
+            <span class="apidocSignatureSpan">(_ref)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lacona.string_utils">module lacona.string_utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lacona.string_utils.substrings">
+            function <span class="apidocSignatureSpan">lacona.string_utils.</span>substrings
+            <span class="apidocSignatureSpan">(input, _ref)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lacona" id="apidoc.module.lacona">module lacona</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lacona.LaconaError" id="apidoc.element.lacona.LaconaError">
+        function <span class="apidocSignatureSpan">lacona.</span>LaconaError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LaconaError() {
+  var temp = Error.apply(this, arguments);
+  temp.name = this.name = 'LaconaError';
+  this.stack = temp.stack;
+  this.message = temp.message;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  if (_lodash2['default'].isString(Constructor)) {
+    var builtins = getBuiltinsForType(type);
+
+    if (_lodash2['default'].has(builtins, Constructor)) {
+      return builtins[Constructor];
+    } else {
+      throw new _error.<span class="apidocCodeKeywordSpan">LaconaError</span>(Constructor + ' is an invalid phrase. Note: non
+-builtin phrases must be uppercase');
+    }
+  } else {
+    assertValid({ Constructor: Constructor, type: type });
+  }
+  return Constructor;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lacona.Parser" id="apidoc.element.lacona.Parser">
+        function <span class="apidocSignatureSpan">lacona.</span>Parser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Parser() {
+  var _ref = arguments.length &lt;= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+  var _ref$langs = _ref.langs;
+  var langs = _ref$langs === undefined ? ['default'] : _ref$langs;
+  var grammar = _ref.grammar;
+  var _ref$extensions = _ref.extensions;
+  var extensions = _ref$extensions === undefined ? [] : _ref$extensions;
+
+  _classCallCheck(this, Parser);
+
+  _get(Object.getPrototypeOf(Parser.prototype), 'constructor', this).call(this);
+
+  this.langs = langs;
+  this.grammar = grammar;
+  this.extensions = extensions;
+  this._oldExtensions = [];
+  this._parseEndCallbacks = [];
+  this._deactivateCallbacks = [];
+  this._sourceManager = new _sourceManager2['default']({
+    update: this._maybeReparse.bind(this)
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+# Usage Example
+
+```jsx
+/** @jsx laconaPhrase.createElement */
+
+var lacona = require('lacona')
+var laconaPhrase = require('lacona-phrase')
+var parser = new lacona.<span class="apidocCodeKeywordSpan">Parser</span>()
+
+parser.grammar = (
+&lt;sequence&gt;
+  &lt;literal text='do' category='action' /&gt;
+  &lt;label text='something' id='whatToDo'&gt;
+    &lt;literal text='something' value='something' /&gt;
+  &lt;/label&gt;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lacona.source_manager" id="apidoc.element.lacona.source_manager">
+        function <span class="apidocSignatureSpan">lacona.</span>source_manager
+        <span class="apidocSignatureSpan">(_ref)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SourceManager(_ref) {
+  var _ref$update = _ref.update;
+  var update = _ref$update === undefined ? function () {} : _ref$update;
+
+  _classCallCheck(this, SourceManager);
+
+  this._sourceMaps = [];
+  this._fetchObjects = [];
+  this.update = update;
+  this.existCount = 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lacona.LaconaError" id="apidoc.module.lacona.LaconaError">module lacona.LaconaError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lacona.LaconaError.LaconaError" id="apidoc.element.lacona.LaconaError.LaconaError">
+        function <span class="apidocSignatureSpan">lacona.</span>LaconaError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LaconaError() {
+  var temp = Error.apply(this, arguments);
+  temp.name = this.name = 'LaconaError';
+  this.stack = temp.stack;
+  this.message = temp.message;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  if (_lodash2['default'].isString(Constructor)) {
+    var builtins = getBuiltinsForType(type);
+
+    if (_lodash2['default'].has(builtins, Constructor)) {
+      return builtins[Constructor];
+    } else {
+      throw new _error.<span class="apidocCodeKeywordSpan">LaconaError</span>(Constructor + ' is an invalid phrase. Note: non
+-builtin phrases must be uppercase');
+    }
+  } else {
+    assertValid({ Constructor: Constructor, type: type });
+  }
+  return Constructor;
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lacona.Parser" id="apidoc.module.lacona.Parser">module lacona.Parser</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lacona.Parser.Parser" id="apidoc.element.lacona.Parser.Parser">
+        function <span class="apidocSignatureSpan">lacona.</span>Parser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Parser() {
+  var _ref = arguments.length &lt;= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+  var _ref$langs = _ref.langs;
+  var langs = _ref$langs === undefined ? ['default'] : _ref$langs;
+  var grammar = _ref.grammar;
+  var _ref$extensions = _ref.extensions;
+  var extensions = _ref$extensions === undefined ? [] : _ref$extensions;
+
+  _classCallCheck(this, Parser);
+
+  _get(Object.getPrototypeOf(Parser.prototype), 'constructor', this).call(this);
+
+  this.langs = langs;
+  this.grammar = grammar;
+  this.extensions = extensions;
+  this._oldExtensions = [];
+  this._parseEndCallbacks = [];
+  this._deactivateCallbacks = [];
+  this._sourceManager = new _sourceManager2['default']({
+    update: this._maybeReparse.bind(this)
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+# Usage Example
+
+```jsx
+/** @jsx laconaPhrase.createElement */
+
+var lacona = require('lacona')
+var laconaPhrase = require('lacona-phrase')
+var parser = new lacona.<span class="apidocCodeKeywordSpan">Parser</span>()
+
+parser.grammar = (
+&lt;sequence&gt;
+  &lt;literal text='do' category='action' /&gt;
+  &lt;label text='something' id='whatToDo'&gt;
+    &lt;literal text='something' value='something' /&gt;
+  &lt;/label&gt;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lacona.component" id="apidoc.module.lacona.component">module lacona.component</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lacona.component.addSource" id="apidoc.element.lacona.component.addSource">
+        function <span class="apidocSignatureSpan">lacona.component.</span>addSource
+        <span class="apidocSignatureSpan">(_ref2)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function addSource(_ref2) {
+  var component = _ref2.component;
+  var options = _ref2.options;
+
+  if (component.observe) {
+    var sourceDescriptor = component.observe();
+    if (sourceDescriptor) {
+      var source = options.sourceManager.subscribe(sourceDescriptor);
+      component.__lastSourceVersion = 0;
+
+      component.source = source;
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lacona.component.destroyPhrase" id="apidoc.element.lacona.component.destroyPhrase">
+        function <span class="apidocSignatureSpan">lacona.component.</span>destroyPhrase
+        <span class="apidocSignatureSpan">(_ref7)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function destroyPhrase(_ref7) {
+  var phrase = _ref7.phrase;
+  var options = _ref7.options;
+
+  if (phrase) {
+    if (phrase._handleParse) {
+      var destroyCall = function destroyCall(phrase) {
+        destroyPhrase({ phrase: phrase, options: options });
+      };
+
+      phrase._destroy(destroyCall);
+    }
+
+    removeSource({ component: phrase, options: options });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lacona.component.getConstructor" id="apidoc.element.lacona.component.getConstructor">
+        function <span class="apidocSignatureSpan">lacona.component.</span>getConstructor
+        <span class="apidocSignatureSpan">(_ref)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getConstructor(_ref) {
+  var Constructor = _ref.Constructor;
+  var type = _ref.type;
+
+  if (_lodash2['default'].isString(Constructor)) {
+    var builtins = getBuiltinsForType(type);
+
+    if (_lodash2['default'].has(builtins, Constructor)) {
+      return builtins[Constructor];
+    } else {
+      throw new _error.LaconaError(Constructor + ' is an invalid phrase. Note: non-builtin phrases must be uppercase');
+    }
+  } else {
+    assertValid({ Constructor: Constructor, type: type });
+  }
+  return Constructor;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lacona.component.getRealProps" id="apidoc.element.lacona.component.getRealProps">
+        function <span class="apidocSignatureSpan">lacona.component.</span>getRealProps
+        <span class="apidocSignatureSpan">(_ref5)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getRealProps(_ref5) {
+  var descriptor = _ref5.descriptor;
+  var Constructor = _ref5.Constructor;
+
+  var realProps = _lodash2['default'].defaults(descriptor.props || {}, Constructor.defaultProps || {});
+  if (descriptor.children &amp;&amp; descriptor.children.length &gt; 0) {
+    realProps.children = _lodash2['default'].flattenDeep(descriptor.children);
+  }
+  return realProps;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lacona.component.instantiate" id="apidoc.element.lacona.component.instantiate">
+        function <span class="apidocSignatureSpan">lacona.component.</span>instantiate
+        <span class="apidocSignatureSpan">(_ref6)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function instantiate(_ref6) {
+  var Constructor = _ref6.Constructor;
+  var props = _ref6.props;
+
+  return new Constructor({ props: props });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lacona.component.removeSource" id="apidoc.element.lacona.component.removeSource">
+        function <span class="apidocSignatureSpan">lacona.component.</span>removeSource
+        <span class="apidocSignatureSpan">(_ref3)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function removeSource(_ref3) {
+  var component = _ref3.component;
+  var options = _ref3.options;
+
+  if (component.source) {
+    options.sourceManager.unsubscribe(component.source);
+    delete component.source;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lacona.error" id="apidoc.module.lacona.error">module lacona.error</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lacona.error.LaconaError" id="apidoc.element.lacona.error.LaconaError">
+        function <span class="apidocSignatureSpan">lacona.error.</span>LaconaError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LaconaError() {
+  var temp = Error.apply(this, arguments);
+  temp.name = this.name = 'LaconaError';
+  this.stack = temp.stack;
+  this.message = temp.message;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  if (_lodash2['default'].isString(Constructor)) {
+    var builtins = getBuiltinsForType(type);
+
+    if (_lodash2['default'].has(builtins, Constructor)) {
+      return builtins[Constructor];
+    } else {
+      throw new _error.<span class="apidocCodeKeywordSpan">LaconaError</span>(Constructor + ' is an invalid phrase. Note: non
+-builtin phrases must be uppercase');
+    }
+  } else {
+    assertValid({ Constructor: Constructor, type: type });
+  }
+  return Constructor;
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lacona.parse" id="apidoc.module.lacona.parse">module lacona.parse</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lacona.parse.parse" id="apidoc.element.lacona.parse.parse">
+        function <span class="apidocSignatureSpan">lacona.</span>parse
+        <span class="apidocSignatureSpan">(_ref)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parse(_ref) {
+  var phrase = _ref.phrase;
+  var input = _ref.input;
+  var options = _ref.options;
+
+  var iterator, _iteratorNormalCompletion, _didIteratorError, _iteratorError, _iterator, _step, output, _iteratorNormalCompletion2
+, _didIteratorError2, _iteratorError2, _iterator2, _step2;
+
+  return _regeneratorRuntime.wrap(function parse$(context$1$0) {
+    while (1) switch (context$1$0.prev = context$1$0.next) {
+      case 0:
+        options.parses++;
+
+        if (!phrase.__describedPhrase) {
+          context$1$0.next = 32;
+          break;
+        }
+
+        iterator = parse({ phrase: phrase.__describedPhrase, input: input, options: options });
+        _iteratorNormalCompletion = true;
+        _didIteratorError = false;
+        _iteratorError = undefined;
+        context$1$0.prev = 6;
+        _iterator = _getIterator(iterator);
+
+      case 8:
+        if (_iteratorNormalCompletion = (_step = _iterator.next()).done) {
+          context$1$0.next = 16;
+          break;
+        }
+
+        output = _step.value;
+
+        if (!(!phrase.validate || hasPlaceholder(output) || phrase.validate(output.result))) {
+          context$1$0.next = 13;
+          break;
+        }
+
+        context$1$0.next = 13;
+        return modify(phrase, output);
+
+      case 13:
+        _iteratorNormalCompletion = true;
+        context$1$0.next = 8;
+        break;
+
+      case 16:
+        context$1$0.next = 22;
+        break;
+
+      case 18:
+        context$1$0.prev = 18;
+        context$1$0.t0 = context$1$0['catch'](6);
+        _didIteratorError = true;
+        _iteratorError = context$1$0.t0;
+
+      case 22:
+        context$1$0.prev = 22;
+        context$1$0.prev = 23;
+
+        if (!_iteratorNormalCompletion &amp;&amp; _iterator['return']) {
+          _iterator['return']();
+        }
+
+      case 25:
+        context$1$0.prev = 25;
+
+        if (!_didIteratorError) {
+          context$1$0.next = 28;
+          break;
+        }
+
+        throw _iteratorError;
+
+      case 28:
+        return context$1$0.finish(25);
+
+      case 29:
+        return context$1$0.finish(22);
+
+      case 30:
+        context$1$0.next = 61;
+        break;
+
+      case 32:
+        if (!phrase._handleParse) {
+          context$1$0.next = 61;
+          break;
+        }
+
+        _iteratorNormalCompletion2 = true;
+        _didIteratorError2 = false;
+        _iteratorError2 = undefined;
+        context$1$0.prev = 36;
+        _iterator2 = _getIterator(phrase._handleParse(input, options));
+
+      case 38:
+        if (_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done) {
+          context$1$0.next = 45;
+          break;
+        }
+
+        output = _step2.value;
+        context$1$0.next = 42;
+        return modify(phrase, output);
+
+      case 42:
+        _iteratorNormalCompletion2 = true;
+        context$1$0.next = 38;
+        break;
+
+      case 45:
+        context$1$0.next = 51;
+        break;
+
+      case 47:
+        context$1$0.prev = 47;
+        context$1$0.t1 = context$1$0['catch'](36);
+        _didIteratorError2 = true;
+        _iteratorError2 = context$1$0.t1;
+
+      case 51:
+        context$1$0.prev = 51;
+        context$1$0.prev = 52;
+
+        if (!_iteratorNormalCompletion2 &amp;&amp; _iterator2['return']) {
+          _iterator2['return']();
+        }
+
+      case 54:
+        context$1$0.prev = 54;
+
+        if (!_didIteratorError2) {
+          context$1$0.next = 57;
+          break;
+        }
+
+        throw _iteratorError2;
+
+      case 57:
+        return context$1$0.finish(54);
+
+      case 58:
+        return context$1$0.finish(51);
+
+      case 59:
+        context$1$0.next = 61;
+        break;
+
+      case 61:
+        // noop
+
+        if (phrase.source) {
+          phrase.__lastSourceVersion = options.sourceManager.getDataVersion(phrase.source);
+        }
+
+      case 62:
+      case 'end':
+        return context$1$0.stop();
+    }
+  }, marked0$0[0], this, [[6, 18, 22, 30], [23,, 25, 29], [36, 47, 51, 59], [52,, 54, 58]]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            return context$2$0.stop();
+        }
+      }, parse, this, [[10, 23, 27, 35], [28,, 30, 34]]);
+    })
+  }, {
+    key: 'parseArray',
+    value: function parseArray(inputString) {
+      return from(this.<span class="apidocCodeKeywordSpan">parse</span>(inputString));
+    }
+  }]);
+
+  return Parser;
+})(_events.EventEmitter);
+
+exports.Parser = Parser;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lacona.parser" id="apidoc.module.lacona.parser">module lacona.parser</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lacona.parser.Parser" id="apidoc.element.lacona.parser.Parser">
+        function <span class="apidocSignatureSpan">lacona.parser.</span>Parser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Parser() {
+  var _ref = arguments.length &lt;= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+  var _ref$langs = _ref.langs;
+  var langs = _ref$langs === undefined ? ['default'] : _ref$langs;
+  var grammar = _ref.grammar;
+  var _ref$extensions = _ref.extensions;
+  var extensions = _ref$extensions === undefined ? [] : _ref$extensions;
+
+  _classCallCheck(this, Parser);
+
+  _get(Object.getPrototypeOf(Parser.prototype), 'constructor', this).call(this);
+
+  this.langs = langs;
+  this.grammar = grammar;
+  this.extensions = extensions;
+  this._oldExtensions = [];
+  this._parseEndCallbacks = [];
+  this._deactivateCallbacks = [];
+  this._sourceManager = new _sourceManager2['default']({
+    update: this._maybeReparse.bind(this)
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+# Usage Example
+
+```jsx
+/** @jsx laconaPhrase.createElement */
+
+var lacona = require('lacona')
+var laconaPhrase = require('lacona-phrase')
+var parser = new lacona.<span class="apidocCodeKeywordSpan">Parser</span>()
+
+parser.grammar = (
+&lt;sequence&gt;
+  &lt;literal text='do' category='action' /&gt;
+  &lt;label text='something' id='whatToDo'&gt;
+    &lt;literal text='something' value='something' /&gt;
+  &lt;/label&gt;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lacona.parser.createOption" id="apidoc.element.lacona.parser.createOption">
+        function <span class="apidocSignatureSpan">lacona.parser.</span>createOption
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createOption(options) {
+  return _lodash2['default'].defaults(options, optionDefaults);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lacona.reconcile" id="apidoc.module.lacona.reconcile">module lacona.reconcile</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lacona.reconcile.reconcile" id="apidoc.element.lacona.reconcile.reconcile">
+        function <span class="apidocSignatureSpan">lacona.</span>reconcile
+        <span class="apidocSignatureSpan">(_ref)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function reconcile(_ref) {
+  var descriptor = _ref.descriptor;
+  var phrase = _ref.phrase;
+  var options = _ref.options;
+
+  var func = _lodash2['default'].isArray(descriptor) ? reconcileArray : reconcileOne;
+  return func({ descriptor: descriptor, phrase: phrase, options: options });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lacona.source_manager" id="apidoc.module.lacona.source_manager">module lacona.source_manager</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lacona.source_manager.source_manager" id="apidoc.element.lacona.source_manager.source_manager">
+        function <span class="apidocSignatureSpan">lacona.</span>source_manager
+        <span class="apidocSignatureSpan">(_ref)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SourceManager(_ref) {
+  var _ref$update = _ref.update;
+  var update = _ref$update === undefined ? function () {} : _ref$update;
+
+  _classCallCheck(this, SourceManager);
+
+  this._sourceMaps = [];
+  this._fetchObjects = [];
+  this.update = update;
+  this.existCount = 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lacona.string_match" id="apidoc.module.lacona.string_match">module lacona.string_match</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lacona.string_match.match" id="apidoc.element.lacona.string_match.match">
+        function <span class="apidocSignatureSpan">lacona.string_match.</span>match
+        <span class="apidocSignatureSpan">(_ref)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function match(_ref) {
+  var input = _ref.input;
+  var text = _ref.text;
+  var _ref$fuzzy = _ref.fuzzy;
+  var fuzzy = _ref$fuzzy === undefined ? false : _ref$fuzzy;
+
+  var nullInput = nullMatch({ input: input, text: text });
+  if (nullInput) return nullInput;
+
+  var inputLower = input.toLowerCase();
+  var textLower = text.toLowerCase();
+
+  var partialBeginning = partialBeginningMatch({ input: input, text: text, inputLower: inputLower, textLower: textLower });
+  if (partialBeginning) return partialBeginning;
+
+  var fullBeginning = fullBeginningMatch({ input: input, text: text, inputLower: inputLower, textLower: textLower });
+  if (fullBeginning) return fullBeginning;
+
+  if (fuzzy) {
+    var anywhere = anywhereMatch({ input: input, text: text, inputLower: inputLower, textLower: textLower });
+    if (anywhere) return anywhere;
+  }
+
+  // const fullFuzzy = fuzzyMatch({input, text})
+  // if (fullFuzzy) return {words: fullFuzzy, score: 0.25}
+
+  return [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return [];
+}
+
+// function fuzzyMatch({input, text}) {
+//   const chars = regexSplit(input)
+//   const fuzzyString = chars.reduce((a, b) =&gt; (`${a}([^${b}]*)${b}`), '^') + '(.*)$'
+//   const fuzzyRegex = new RegExp(fuzzyString, 'i')
+//   const fuzzyMatches = text.<span class="apidocCodeKeywordSpan">match</span>(fuzzyRegex)
+//
+//   if (fuzzyMatches) {
+//     const words = []
+//     for (let i = 1, l = fuzzyMatches.length; i &lt; l; i++) {
+//       if (fuzzyMatches[i].length &gt; 0) {
+//         words.push({
+//           text: fuzzyMatches[i],
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lacona.string_utils" id="apidoc.module.lacona.string_utils">module lacona.string_utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lacona.string_utils.substrings" id="apidoc.element.lacona.string_utils.substrings">
+        function <span class="apidocSignatureSpan">lacona.string_utils.</span>substrings
+        <span class="apidocSignatureSpan">(input, _ref)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function substrings(input, _ref) {
+  var splitOn = _ref.splitOn;
+  var noSplit = _ref.noSplit;
+  var reverse = _ref.reverse;
+  var inputs, i;
+  return _regeneratorRuntime.wrap(function substrings$(context$1$0) {
+    while (1) switch (context$1$0.prev = context$1$0.next) {
+      case 0:
+        if (!noSplit) {
+          context$1$0.next = 4;
+          break;
+        }
+
+        context$1$0.next = 3;
+        return input;
+
+      case 3:
+        return context$1$0.abrupt('return');
+
+      case 4:
+        inputs = (0, _smartSplit2['default'])(input, splitOn);
+        i = 0;
+
+      case 6:
+        if (!(i &lt; inputs.length)) {
+          context$1$0.next = 17;
+          break;
+        }
+
+        if (!reverse) {
+          context$1$0.next = 12;
+          break;
+        }
+
+        context$1$0.next = 10;
+        return inputs.slice(0, inputs.length - i).join('');
+
+      case 10:
+        context$1$0.next = 14;
+        break;
+
+      case 12:
+        context$1$0.next = 14;
+        return inputs.slice(0, i + 1).join('');
+
+      case 14:
+        i += 2;
+        context$1$0.next = 6;
+        break;
+
+      case 17:
+      case 'end':
+        return context$1$0.stop();
+    }
+  }, marked0$0[0], this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
