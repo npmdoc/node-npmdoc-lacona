@@ -1,6 +1,7 @@
-# npmdoc-lacona [![npm package](https://img.shields.io/npm/v/npmdoc-lacona.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-lacona) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-lacona.svg)](https://travis-ci.org/npmdoc/node-npmdoc-lacona)
+# npmdoc-lacona
 
-api documentation for  [lacona (v0.39.0)](https://github.com/lacona/lacona)
+#### basic api documentation for  [lacona (v0.39.0)](https://github.com/lacona/lacona)  [![npm package](https://img.shields.io/npm/v/npmdoc-lacona.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-lacona) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-lacona.svg)](https://travis-ci.org/npmdoc/node-npmdoc-lacona)
+
 #### Natural Language Parsing Framework
 
 [![NPM](https://nodei.co/npm/lacona.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/lacona)
@@ -77,7 +78,8 @@ api documentation for  [lacona (v0.39.0)](https://github.com/lacona/lacona)
         "test": "mocha tmp",
         "validate": "npm run build && npm test"
     },
-    "version": "0.39.0"
+    "version": "0.39.0",
+    "bin": {}
 }
 ```
 
